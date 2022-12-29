@@ -14,7 +14,7 @@
 	<name>FacturacionHogar</name>
 	<description>Proyecto de facturación para bootcamp de Kodigo</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
