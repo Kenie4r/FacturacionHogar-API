@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProveedorImpl{
@@ -14,5 +15,21 @@ public class ProveedorImpl{
 
     public List<Proveedor> obtenerProveedores(){
         return proveedorRepository.findAll();
+    }
+
+
+    public Proveedor obtenerProveedorPorID(Long id) throws Exception {
+        Optional<Proveedor> proveedor = proveedorRepository.findById(id);
+        if(!proveedor.isPresent()){
+            throw new Exception();
+        }
+        return proveedor.get();
+    }
+
+    public String guardarProveedor(Proveedor proveedor) {
+        if(proveedorRepository.save(proveedor)!=null){
+            return "SAVED";
+        }
+        return "UNSAVED";
     }
 }
