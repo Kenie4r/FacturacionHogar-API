@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.sound.sampled.Port;
+import java.rmi.server.RemoteRef;
 import java.util.List;
 
 @RestController
@@ -30,4 +32,13 @@ public class ProveedorController {
         return new ResponseEntity<String>(proveedor.guardarProveedor(proveedorN), HttpStatus.CREATED);
     }
 
+    @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteProveedor(@PathVariable Long id) throws Exception {
+        return new ResponseEntity<String>(proveedor.eliminarProveedor(id), HttpStatus.OK);
+    }
+    @RequestMapping(value = "{id}", method = RequestMethod.PATCH)
+    public ResponseEntity<String> updateProveedor(@PathVariable("id") Long id , @RequestBody Proveedor proveedor1){
+        proveedor1.setCodigoProveedor(id);
+        return new ResponseEntity<String>(proveedor.actualizarProveedor(proveedor1), HttpStatus.OK);
+    }
 }
