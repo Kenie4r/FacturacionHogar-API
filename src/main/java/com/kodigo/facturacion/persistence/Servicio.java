@@ -19,9 +19,11 @@ public class Servicio {
     private double tarifa;
     @Column(name = "FechaSuspencion", nullable = false)
     private Date fechaSuspencion;
-    //Crear clase casa
     @ManyToOne
     @JoinColumn(name = "Proveedor_CodigoProveedor")
     private Proveedor proveedor;
+    @ManyToOne
+    @JoinColumn(name = "Casa_CodigoCasa")
+    private Casa casa;
 
 }
