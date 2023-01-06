@@ -181,7 +181,7 @@ DROP TABLE IF EXISTS `app-kodigo`.`Propietario` ;
 
 CREATE TABLE IF NOT EXISTS `app-kodigo`.`Propietario` (
   `CodigoPropietario` INT NOT NULL AUTO_INCREMENT,
-  `NombrePresona` VARCHAR(125) NOT NULL,
+  `NombrePersona` VARCHAR(125) NOT NULL,
   `Correo` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`CodigoPropietario`))
 ENGINE = InnoDB;
