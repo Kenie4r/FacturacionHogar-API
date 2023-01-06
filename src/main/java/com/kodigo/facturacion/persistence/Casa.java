@@ -2,10 +2,12 @@ package com.kodigo.facturacion.persistence;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
 @Table(name = "Casa")
+@ToString
 public class Casa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
