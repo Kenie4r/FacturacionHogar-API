@@ -108,7 +108,7 @@ DROP TABLE IF EXISTS `app-kodigo`.`Factura` ;
 
 CREATE TABLE IF NOT EXISTS `app-kodigo`.`Factura` (
   `idFactura` INT NOT NULL AUTO_INCREMENT,
-  `FechaExpidacion` DATE NOT NULL DEFAULT NOW(),
+  `FechaExpidacion` datetime NOT NULL DEFAULT NOW(),
   `Total` DECIMAL NOT NULL DEFAULT 0.00,
   `Servicio_CodigoServicio` INT NOT NULL,
   PRIMARY KEY (`idFactura`),
@@ -181,7 +181,7 @@ DROP TABLE IF EXISTS `app-kodigo`.`Propietario` ;
 
 CREATE TABLE IF NOT EXISTS `app-kodigo`.`Propietario` (
   `CodigoPropietario` INT NOT NULL AUTO_INCREMENT,
-  `NombrePresona` VARCHAR(125) NOT NULL,
+  `NombrePersona` VARCHAR(125) NOT NULL,
   `Correo` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`CodigoPropietario`))
 ENGINE = InnoDB;
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `app-kodigo`.`Servicio` (
   `CodigoServicio` INT NOT NULL AUTO_INCREMENT,
   `NombreServicio` VARCHAR(45) NOT NULL,
   `Tarifa` DECIMAL NOT NULL DEFAULT 1.00,
-  `FechaSuspencion` DATE NOT NULL,
+  `FechaSuspencion` datetime NOT NULL,
   `Casa_CodigoCasa` INT NOT NULL,
   `Proveedor_CodigoProveedor` INT NOT NULL,
   PRIMARY KEY (`CodigoServicio`),

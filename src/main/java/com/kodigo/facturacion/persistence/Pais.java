@@ -10,6 +10,7 @@ public class Pais {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigoPais;
+
     @Column(name = "NombrePais")
     private String nombrePais;
 
