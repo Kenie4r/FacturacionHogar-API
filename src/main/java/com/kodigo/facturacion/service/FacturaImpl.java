@@ -17,43 +17,67 @@ public class FacturaImpl implements FacturaService {
 
     @Override
     public String guardarFactura(Factura factura) {
-        try{
+        try {
             repository.save(factura);
-        }catch (Exception exception){
-            return "Can't save the new Invoice, try later";
+        } catch (Exception exception) {
+            return "Can't save";
         }
-        return "Invoice Saved";
+        return "Saved";
     }
 
     @Override
     public String eliminarFactura(Long id) {
 
-        try{
+        try {
             Optional<Factura> facturaOptional = repository.findById(id);
-            if(facturaOptional.isPresent()){
+            if (facturaOptional.isPresent()) {
                 Factura factura = facturaOptional.get();
                 repository.delete(factura);
                 return "Deleted";
             }
-            throw new Exception();
-
-        }catch (Exception e){
+            return "Can't delete";
+        } catch (Exception e) {
             return "Can't delete";
         }
     }
 
     @Override
     public String actualizarFactura(Factura baseFactura, Long id) {
-        return null;
+        try {
+            Optional<Factura> facturaOptional = repository.findById(id);
+            if (facturaOptional.isPresent()) {
+                Factura fct = facturaOptional.get();
+                fct.setServicio(baseFactura.getServicio());
+                fct.setTotal(baseFactura.getTotal());
+                fct.setFechaExpidacion(baseFactura.getFechaExpidacion());
+
+
+                repository.save(fct);
+
+                return "Update";
+            }
+            return "Can't update";
+
+        } catch (Exception e) {
+            return "Can't update";
+        }
     }
 
     @Override
     public Factura obtenerFacturaPorCodigo(Long id) {
-        return null;
+        try{
+            Optional<Factura> facturaOptional = repository.findById(id);
+            if(facturaOptional.isPresent()){
+                return facturaOptional.get();
+            }
+            return null;
+        }catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public List<Factura> listadoDeFacturas() {
-        return null;
+        return repository.findAll();
     }
 }
