@@ -3,6 +3,7 @@ package com.kodigo.facturacion.service;
 import com.kodigo.facturacion.exception.ResourceNotFoundException;
 import com.kodigo.facturacion.persistence.*;
 import com.kodigo.facturacion.repository.interfaces.*;
+import com.kodigo.facturacion.requestbody.AnadirCasa;
 import com.kodigo.facturacion.service.interfaces.CasaService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,24 +30,25 @@ public class CasaImpl implements CasaService {
     }
 
     @Override
-    public Casa guardarCasa(String numeroCasa, Double costoMantenimiento, Long codigoPropietario,
-                            Long codigoDepartamento, Long codigoPais, Long codigoMunicipio) {
+    public Casa guardarCasa(AnadirCasa anadirCasa) {
 
-        Propietario propietario = propietarioRepository.findById(codigoPropietario).orElseThrow(() ->
-                new ResourceNotFoundException("Propietario","Id",codigoPropietario));
+        System.out.println(anadirCasa);
 
-        Pais pais = paisRepository.findById(codigoPais).orElseThrow(() ->
-                new ResourceNotFoundException("Pais","Id",codigoPais));
+        Propietario propietario = propietarioRepository.findById(anadirCasa.codigoPropietario).orElseThrow(() ->
+                new ResourceNotFoundException("Propietario","Id",anadirCasa.codigoPropietario));
 
-        Departamento departamento = departamentoRepository.findById(codigoDepartamento).orElseThrow(()->
-                new ResourceNotFoundException("Departamento", "Id",codigoDepartamento));
+        Pais pais = paisRepository.findById(anadirCasa.codigoPais).orElseThrow(() ->
+                new ResourceNotFoundException("Pais","Id",anadirCasa.codigoPais));
 
-        Municipio municipio = municipioRepository.findById(codigoMunicipio).orElseThrow(()->
-                new ResourceNotFoundException("Municipio","Id",codigoMunicipio));
+        Departamento departamento = departamentoRepository.findById(anadirCasa.codigoDepartamento).orElseThrow(()->
+                new ResourceNotFoundException("Departamento", "Id",anadirCasa.codigoDepartamento));
+
+        Municipio municipio = municipioRepository.findById(anadirCasa.codigoMunicipio).orElseThrow(()->
+                new ResourceNotFoundException("Municipio","Id",anadirCasa.codigoMunicipio));
 
         Casa casa = new Casa();
-        casa.setNumeroCasa(numeroCasa);
-        casa.setCostoMantenimiento(costoMantenimiento);
+        casa.setNumeroCasa(anadirCasa.numeroCasa);
+        casa.setCostoMantenimiento(anadirCasa.costoMantenimiento);
         casa.setPropietario(propietario);
         casa.setPais(pais);
         casa.setDepartamento(departamento);
