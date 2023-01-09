@@ -4,6 +4,8 @@ package com.kodigo.facturacion.persistence;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Proveedor", schema = "app-kodigo")
 @NoArgsConstructor @AllArgsConstructor
