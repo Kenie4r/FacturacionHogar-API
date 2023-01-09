@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/departamento")
+@RequestMapping("api/departamento")
 public class DepartamentoController {
 
     @Autowired
@@ -37,10 +37,14 @@ public class DepartamentoController {
         return new ResponseEntity<String>(department.deleteDepartment(id),HttpStatus.OK);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.PATCH)
-    public ResponseEntity<String> updateDepartment(@PathVariable("id") Long id, @RequestBody Departamento department1){
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    public ResponseEntity<String> updateDepartment(@PathVariable Long id, @RequestBody Departamento department1){
         department1.setCodigoDepartamento(id);
-        return  new ResponseEntity<String>(department.updateDepartment(department1), HttpStatus.OK);
+        String message = department.updateDepartment(department1);
+        if(message.equals("Can't delete it")){
+            throw new RuntimeException("No se pudo actualizar registro");
+        }
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
 
