@@ -22,6 +22,8 @@ public class CasaImpl implements CasaService {
     private final DepartamentoRepository departamentoRepository;
     @Autowired
     private final MunicipioRepository municipioRepository;
+    @Autowired
+    private final HabitanteRepository habitanteRepository;
 
 
     @Override
@@ -61,6 +63,13 @@ public class CasaImpl implements CasaService {
     public Casa cargarCasaPorId(Long id) {
         return casaRepository.findById(id).orElseThrow(()->
                 new ResourceNotFoundException("Casa","Id",id));
+    }
+
+    @Override
+    public Habitante guardarHabitante(Long casaId, Habitante habitante) {
+        Casa casa = cargarCasaPorId(casaId);
+        habitante.setCasa(casa);
+        return habitanteRepository.save(habitante);
     }
 
 }

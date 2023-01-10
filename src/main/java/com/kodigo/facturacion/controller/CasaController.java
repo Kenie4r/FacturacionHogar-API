@@ -1,6 +1,7 @@
 package com.kodigo.facturacion.controller;
 
 import com.kodigo.facturacion.persistence.Casa;
+import com.kodigo.facturacion.persistence.Habitante;
 import com.kodigo.facturacion.requestbody.AnadirCasa;
 import com.kodigo.facturacion.service.interfaces.CasaService;
 import lombok.AllArgsConstructor;
@@ -32,5 +33,10 @@ public class CasaController {
     @GetMapping("{id}")
     public ResponseEntity<Casa> cargarCasaPorId(@PathVariable("id") long casaId){
         return new ResponseEntity<Casa>(casaService.cargarCasaPorId(casaId),HttpStatus.OK);
+    }
+
+    @PostMapping("{id}/nuevohabitante")
+    public ResponseEntity<Habitante> guardarHabitante(@PathVariable("id") long casaId,@RequestBody Habitante habitante){
+        return new ResponseEntity<Habitante>(casaService.guardarHabitante(casaId,habitante),HttpStatus.CREATED);
     }
 }
