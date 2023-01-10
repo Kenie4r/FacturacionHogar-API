@@ -1,10 +1,11 @@
 package com.kodigo.facturacion.persistence;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data @Entity @Table(name = "Cargo")
+@Data @Entity @Table(name = "cargo")
 public class Cargo {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long IdCargo;
@@ -14,5 +15,6 @@ public class Cargo {
     private double monto;
     @ManyToOne
     @JoinColumn(name = "Factura_idFactura")
+    @JsonBackReference
     private Factura factura;
 }

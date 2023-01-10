@@ -83,6 +83,6 @@ public class FacturaImpl implements FacturaService {
 
     @Override
     public List<Factura> listadoDeFacturasSerivicio(Long id) {
-        return  repository.getFacturaByServicioOrTotal(id);
+        return  repository.getFacturaByServicio(id);
     }
 }

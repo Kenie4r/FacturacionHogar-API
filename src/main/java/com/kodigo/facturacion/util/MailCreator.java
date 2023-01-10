@@ -24,9 +24,7 @@ public class MailCreator implements MailCreatorInterface {
                 " recuerda que puedes pagar estos servicios en las ventanillas del banco, etc. </p>" +
                 "<table> <caption>Factura de "+factura.getServicio().getNombreServicio()+"</caption><thead><tr><th>Nombre de cargo </th> <th>Coste </th></tr></thead>";
 
-        for(Cargo cargo : factura.getCargos()){
 
-        }
         htmlBODY+="<tr><td>Total: </td><td>"+factura.getTotal()+"</td></tr>";
 
         htmlBODY+="</table>     </body>" +

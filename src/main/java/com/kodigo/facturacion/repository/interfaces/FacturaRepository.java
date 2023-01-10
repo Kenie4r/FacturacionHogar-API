@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface FacturaRepository extends JpaRepository<Factura, Long> {
     @Query("SELECT f FROM Factura  f WHERE f.servicio.codigoServicio = ?1")
-    public List<Factura> getFacturaByServicioOrTotal(Long id);
+    public List<Factura> getFacturaByServicio(Long id);
 }
