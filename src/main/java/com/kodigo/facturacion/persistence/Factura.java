@@ -15,6 +15,7 @@ public class Factura {
     private Date fechaExpidacion;
     @Column(name = "Total", nullable = false)
     private double total;
+
     @ManyToOne
     @JoinColumn(name = "Servicio_CodigoServicio")
     private Servicio servicio;

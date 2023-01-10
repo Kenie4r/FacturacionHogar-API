@@ -24,12 +24,20 @@ public class ProveedorController {
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public ResponseEntity<Proveedor> getProveedor(@PathVariable("id") Long id) throws Exception {
-        return new ResponseEntity<Proveedor>(proveedor.obtenerProveedorPorID(id), HttpStatus.FOUND);
+        Proveedor proveedor1 = proveedor.obtenerProveedorPorID(id);
+        if(proveedor1==null){
+               throw new RuntimeException("Id de proveedor no existe");
+        }
+        return new ResponseEntity<Proveedor>(proveedor1, HttpStatus.FOUND);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<String> saveProveedor(@RequestBody Proveedor proveedorN){
-        return new ResponseEntity<String>(proveedor.guardarProveedor(proveedorN), HttpStatus.CREATED);
+        String message = proveedor.guardarProveedor(proveedorN);
+        if(message.equals("Can't save")){
+            throw new RuntimeException("No se ha podido guardar el proveedor");
+        }
+        return new ResponseEntity<String>(message, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
@@ -39,6 +47,15 @@ public class ProveedorController {
     @RequestMapping(value = "{id}", method = RequestMethod.PATCH)
     public ResponseEntity<String> updateProveedor(@PathVariable("id") Long id , @RequestBody Proveedor proveedor1){
         proveedor1.setCodigoProveedor(id);
-        return new ResponseEntity<String>(proveedor.actualizarProveedor(proveedor1), HttpStatus.OK);
+        String message = proveedor.actualizarProveedor(proveedor1);
+        if(message.equals("Can't delete it")){
+            throw new RuntimeException("No se ha podido eliminar el proveedor");
+        }
+        return new ResponseEntity<String>(message , HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "nombre/{name}", method = RequestMethod.GET)
+    public ResponseEntity<List<Proveedor>> obtenerProveedorPorNombre(@PathVariable("name") String name){
+        return new ResponseEntity<>(proveedor.obtenerProveedorPorNombre(name), HttpStatus.OK);
     }
 }
