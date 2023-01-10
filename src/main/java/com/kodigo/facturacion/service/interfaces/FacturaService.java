@@ -12,5 +12,5 @@ public interface FacturaService {
     List<Factura> listadoDeFacturas();
 
 
-
+   List<Factura> listadoDeFacturasSerivicio(Long id);
 }
