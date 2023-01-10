@@ -1,8 +1,7 @@
 package com.kodigo.facturacion.service;
 
 import com.kodigo.facturacion.persistence.Departamento;
-import com.kodigo.facturacion.service.interfaces.DepartamentoRepository;
-import com.kodigo.facturacion.service.interfaces.departamentoService;
+import com.kodigo.facturacion.repository.interfaces.DepartamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DepartamentoImpl implements  departamentoService{
+public class DepartamentoImpl {
 
     @Autowired
     DepartamentoRepository departamentoRepository;

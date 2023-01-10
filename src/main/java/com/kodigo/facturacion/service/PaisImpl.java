@@ -1,7 +1,7 @@
 package com.kodigo.facturacion.service;
 
 import com.kodigo.facturacion.persistence.Pais;
-import com.kodigo.facturacion.service.interfaces.PaisRepository;
+import com.kodigo.facturacion.repository.interfaces.PaisRepository;
 import com.kodigo.facturacion.service.interfaces.PaisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
