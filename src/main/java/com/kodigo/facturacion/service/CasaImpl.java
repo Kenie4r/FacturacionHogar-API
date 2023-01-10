@@ -57,4 +57,10 @@ public class CasaImpl implements CasaService {
         return guardarCasa(casa);
     }
 
+    @Override
+    public Casa cargarCasaPorId(Long id) {
+        return casaRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException("Casa","Id",id));
+    }
+
 }
