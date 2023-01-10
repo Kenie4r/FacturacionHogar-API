@@ -74,6 +74,7 @@ public class CasaImpl implements CasaService {
 
     @Override
     public void eliminarCasa(long id) {
+        habitanteRepository.eliminarHabitantesDeCasa(id);
         casaRepository.findById(id).orElseThrow(()->
                 new ResourceNotFoundException("Casa","Id",id));
         casaRepository.deleteById(id);
