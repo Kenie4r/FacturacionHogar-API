@@ -72,4 +72,11 @@ public class CasaImpl implements CasaService {
         return habitanteRepository.save(habitante);
     }
 
+    @Override
+    public void eliminarCasa(long id) {
+        casaRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException("Casa","Id",id));
+        casaRepository.deleteById(id);
+    }
+
 }

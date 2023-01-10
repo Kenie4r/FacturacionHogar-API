@@ -39,4 +39,10 @@ public class CasaController {
     public ResponseEntity<Habitante> guardarHabitante(@PathVariable("id") long casaId,@RequestBody Habitante habitante){
         return new ResponseEntity<Habitante>(casaService.guardarHabitante(casaId,habitante),HttpStatus.CREATED);
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> eliminarCasa(@PathVariable("id") long id){
+        casaService.eliminarCasa(id);
+        return new ResponseEntity<String>("Casa Eliminada Exitosamente",HttpStatus.OK);
+    }
 }

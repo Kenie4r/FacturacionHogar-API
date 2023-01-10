@@ -9,4 +9,5 @@ public interface CasaService {
     Casa guardarCasa(AnadirCasa anadirCasa);
     Casa cargarCasaPorId(Long id);
     Habitante guardarHabitante(Long casaId,Habitante habitante);
+    void eliminarCasa(long id);
 }
