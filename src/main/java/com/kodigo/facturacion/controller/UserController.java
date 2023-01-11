@@ -18,10 +18,6 @@ public class UserController {
     public ResponseEntity<Usuario> getUser (@PathVariable("id") String id) throws Exception{
         return new ResponseEntity<Usuario>(user.BuscarUsuarioByName(id), HttpStatus.FOUND);
     }
-
-    @GetMapping("")
-    public String index(){
-        return "index";
-    }
+    
 
 }

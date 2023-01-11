@@ -37,7 +37,12 @@ async function ValidarMenu(){
             console.log(data);
             $(location).attr('href',"http://localhost:8080/panelp.html");
         }else{
-            alert("Error");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Credenciales Incorrectas',
+                footer: '<h5>Revisa tus datos</h5>'
+              });
         }
 
         console.log(passworduser+" "+user+"contra " + data.nombre + data.password );
