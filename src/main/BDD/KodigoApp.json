@@ -1,0 +1,2081 @@
+{
+  "info": {
+    "name": "KodigoApp",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Usuario",
+      "item": [
+        {
+          "name": "CargarUsuarioPorNombre",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/loggin/diego.molina",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "añadirUsuario",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n    \"nombre\": \"test.user\",\r\n    \"password\": \"pass123\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/loggin",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarUsuario",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n    \"nombre\": \"test.user\",\r\n    \"password\": \"pass321\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/loggin/5",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarUsuario",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/loggin/5",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Casa",
+      "item": [
+        {
+          "name": "AgregarCasaConIds",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"numeroCasa\" : \"26-C\",\r\n\t\"costoMantenimiento\": 15.0,\r\n\t\"codigoPropietario\": 2,\r\n\t\"codigoDepartamento\":3,\r\n\t\"codigoPais\":2,\r\n\t\"codigoMunicipio\":2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/casa/agregar",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "AgregarCasa",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"numeroCasa\": \"3\",\r\n  \"costoMantenimiento\": 30.0,\r\n  \"propietario\": {\r\n    \"codigoPropietario\": 1\r\n  },\r\n  \"departamento\": {\r\n    \"codigoDepartamento\": 1\r\n  },\r\n  \"pais\": {\r\n    \"codigoPais\": 1\r\n  },\r\n  \"municipio\": {\r\n    \"codigoMunicipio\": 1\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/casa",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "cargarCasaPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/casa/1",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "NuevoHabitante",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombreHabitante\":\"Randy Ronse\",\r\n\t\"correo\":\"rise@close.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/casa/4/nuevohabitante",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarCasa",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/casa/eliminar/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarCasa",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"numeroCasa\" : \"506-c\",\r\n\t\"costoMantenimiento\": 70.0,\r\n\t\"codigoPropietario\": 5,\r\n\t\"codigoDepartamento\":3,\r\n\t\"codigoPais\":2,\r\n\t\"codigoMunicipio\":2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/casa/actualizar/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Propietario",
+      "item": [
+        {
+          "name": "añadirPropietario",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombrePersona\":\"Eliminado Propietario\",\r\n\t\"correo\":\"eliminar@email.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/propietario/agregar",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "CargarPropietarioPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/propietario/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarPropietario",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/propietario/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActulizarPropietario",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombrePersona\":\"Diego Molina\",\r\n\t\"correo\":\"alfredodiego41@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/propietario/actualizar/5",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "actuator",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "http://localhost:8080/actuator",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "Habitante",
+      "item": [
+        {
+          "name": "AgregarHabitante",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombreHabitante\":\"Luis Molina\",\r\n\t\"correo\":\"alfredodiego42@hotmail.com\",\r\n\t\"casaId\":3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/habitante/agregar",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ConseguirHabitante",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/habitante/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarHabitante",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/habitante/eliminar/",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarHabitante",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombreHabitante\":\"Paco Nantos\",\r\n\t\"correo\":\"mail@hotmail.com\",\r\n\t\"casaId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/habitante/actualizar/1",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Departamento",
+      "item": [
+        {
+          "name": "CargarTodosLosDepartamentos",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/departamento",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "CargarDepartamentoPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/departamento/1",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "GuardarDepartamento",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"nombreDepartamento\": \"Ahuachapan\",\r\n  \"pais\": {\r\n    \"codigoPais\": 2\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/departamento",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarDepartamento",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"nombreDepartamento\": \"Santa Ana\",\r\n  \"pais\": {\r\n    \"codigoPais\": 2\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/departamento/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarDepartamento",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/departamento/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Pais",
+      "item": [
+        {
+          "name": "ConseguirTodosLosPaises",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pais",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ConseguirPaisPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pais/1",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "GuardarPais",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombrePais\":\"Mexico\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pais",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarPais",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pais/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarPais",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombrePais\":\"Colombia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pais/5",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Municipio",
+      "item": [
+        {
+          "name": "AgregarMunicipio",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombreMunicipio\":\"San Jose\",\r\n\t\"codigoDepartamento\":3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/municipio/agregar",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarMunicipio",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombreMunicipio\":\"Conchagua\",\r\n\t\"codigoDepartamento\":3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/municipio/actualizar/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ConseguirMunicipioPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/municipio/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarMunicipio",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/municipio/eliminar/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Proveedor",
+      "item": [
+        {
+          "name": "AñadirProveedor",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n\t\"nombreProveedor\":\"Anda\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proveedor",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ConseguirTodosLosProveedores",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proveedor",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ConseguirProveedorPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proveedor/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarProveedor",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"nombreProveedor\": \"CAEES\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proveedor/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ConseguirProveedorPorNombre",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proveedor/nombre/CAEES",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarProveedor",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proveedor/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Servicio",
+      "item": [
+        {
+          "name": "ConseguirServicioPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/servicio/1",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "GuardarServicio",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"nombreServicio\": \"Agua ANDA\",\r\n  \"tarifa\": 1.1,\r\n  \"fechaSuspencion\": \"2022-08-23\",\r\n  \"codigoCasa\": 8,\r\n  \"codigoProveedor\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/servicio/agregar",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarServicio",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"nombreServicio\": \"Agua ANDA\",\r\n  \"tarifa\": 1.1,\r\n  \"fechaSuspencion\": \"2022-08-23\",\r\n  \"codigoCasa\": 3,\r\n  \"codigoProveedor\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/servicio/actualizar/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarServicio",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/servicio/2",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Factura",
+      "item": [
+        {
+          "name": "CargarTodasLasFacturas",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/factura",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "CargarFacturaPorId",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/factura/4",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "GuardarFactura",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"fechaExpidacion\": \"2023-01-10\",\r\n  \"servicio\": {\r\n    \"codigoServicio\": 4\r\n\t}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/factura",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarFactura",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n  \"fechaExpidacion\": \"2023-01-10\",\r\n  \"total\": 0.0,\r\n  \"servicio\": {\r\n    \"codigoServicio\": 3\r\n\t}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/factura/2",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ListarFacturasPorServicio",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/factura/servicio/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarFactura",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/factura/eliminar/2",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    },
+    {
+      "name": "Cargos",
+      "item": [
+        {
+          "name": "CargarCargosPorFactura",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "GET",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cargo/factura/3",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "GuardarCargo",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "POST",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n    \"nombreCargo\": \"Impuesto\",\r\n    \"monto\": 2.0,\r\n    \"facturaId\": 4\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cargo",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "ActualizarCargo",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "PUT",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": "{\r\n    \"nombreCargo\": \"Impuesto\",\r\n    \"monto\": 2.0,\r\n    \"facturaId\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cargo/6",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        },
+        {
+          "name": "EliminarCargo",
+          "item": null,
+          "request": {
+            "auth": {
+              "type": null,
+              "apikey": null,
+              "awsv4": null,
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "hawk": null,
+              "ntlm": null,
+              "oauth1": null,
+              "oauth2": null
+            },
+            "method": "DELETE",
+            "header": null,
+            "body": {
+              "mode": null,
+              "raw": null,
+              "options": null,
+              "formdata": null,
+              "urlencoded": null,
+              "file": null
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/cargo/6",
+              "protocol": null,
+              "host": null,
+              "path": null,
+              "query": [],
+              "variable": null
+            }
+          }
+        }
+      ],
+      "request": null
+    }
+  ],
+  "variable": null,
+  "auth": null
+}
