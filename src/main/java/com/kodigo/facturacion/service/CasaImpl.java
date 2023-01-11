@@ -34,8 +34,6 @@ public class CasaImpl implements CasaService {
     @Override
     public Casa guardarCasa(CuerpoCasa cuerpoCasa) {
 
-        System.out.println(cuerpoCasa);
-
         Propietario propietario = propietarioRepository.findById(cuerpoCasa.codigoPropietario).orElseThrow(() ->
                 new ResourceNotFoundException("Propietario","Id", cuerpoCasa.codigoPropietario));
 

@@ -8,6 +8,7 @@ import java.sql.Date;
 
 @Data
 @Entity
+@Table(name = "servicio")
 public class Servicio {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
@@ -20,10 +21,11 @@ public class Servicio {
     @Column(name = "FechaSuspencion", nullable = false)
     private Date fechaSuspencion;
     @ManyToOne
-    @JoinColumn(name = "Proveedor_CodigoProveedor")
-    private Proveedor proveedor;
-    @ManyToOne
     @JoinColumn(name = "Casa_CodigoCasa")
     private Casa casa;
+    @ManyToOne
+    @JoinColumn(name = "Proveedor_CodigoProveedor")
+    private Proveedor proveedor;
+
 
 }
