@@ -3,22 +3,15 @@ package com.kodigo.facturacion.util;
 
 import com.kodigo.facturacion.persistence.Cargo;
 import com.kodigo.facturacion.persistence.Factura;
-import com.kodigo.facturacion.service.Mail;
+import com.kodigo.facturacion.service.MailImpl;
+import com.kodigo.facturacion.service.MailImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class MailCreator implements MailCreatorInterface {
-
-    @Autowired
-    Mail mail;
-    @Override
-    public boolean makeRequestForMail(String body,  String correo) {
-
-        boolean result = mail.enviarCorreo(correo, body);
-        return result;
-    }
+    MailImpl mail = new MailImpl();
 
     @Override
-    public boolean CuerpoDeCorreo(Factura factura, String correo) {
+    public String CuerpoDeCorreo(Factura factura) {
 
         String htmlBODY = "<html>" +
                 "<body>" +
@@ -34,7 +27,7 @@ public class MailCreator implements MailCreatorInterface {
         htmlBODY+="</table>     </body>" +
                 "</html>";
 //      Call the mail request function in order to send the email
-        return makeRequestForMail(htmlBODY, correo);
+        return htmlBODY;
     }
 }
 

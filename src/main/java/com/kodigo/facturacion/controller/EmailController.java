@@ -3,7 +3,7 @@ package com.kodigo.facturacion.controller;
 
 import com.kodigo.facturacion.persistence.Factura;
 import com.kodigo.facturacion.service.FacturaImpl;
-import com.kodigo.facturacion.service.Mail;
+import com.kodigo.facturacion.service.MailImpl;
 import com.kodigo.facturacion.util.MailCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,11 +21,12 @@ public class EmailController {
     @Autowired
     FacturaImpl facturaImpl;
 
+    @Autowired
+    MailImpl mail;
     @RequestMapping(value = "factura/{id}", method = RequestMethod.GET)
     public ResponseEntity<String> enviarCorreoDeFactura(@PathVariable Long id){
-        MailCreator mailCreator = new MailCreator();
         Factura fc = facturaImpl.obtenerFacturaPorCodigo(id);
-        if(!mailCreator.CuerpoDeCorreo(fc, fc.getServicio().getCasa().getPropietario().getCorreo())){
+        if(!mail.setDatosdeCorreo(fc)){
             throw new RuntimeException("No se pudo enviar el correo al propietario del hogar");
         }
         return new ResponseEntity<>("Correo enviado!",HttpStatus.OK);
