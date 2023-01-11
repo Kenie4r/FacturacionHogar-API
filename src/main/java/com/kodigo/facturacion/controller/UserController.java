@@ -15,8 +15,8 @@ public class UserController {
     UserService user;
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    public ResponseEntity<Usuario> getUser (@PathVariable("id") Long id) throws Exception{
-        return new ResponseEntity<Usuario>(user.BuscarUsuarioById(id), HttpStatus.FOUND);
+    public ResponseEntity<Usuario> getUser (@PathVariable("id") String id) throws Exception{
+        return new ResponseEntity<Usuario>(user.BuscarUsuarioByName(id), HttpStatus.FOUND);
     }
 
     @GetMapping("")

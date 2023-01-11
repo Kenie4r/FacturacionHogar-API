@@ -1,6 +1,5 @@
 package com.kodigo.facturacion.service;
 
-import com.kodigo.facturacion.persistence.Proveedor;
 import com.kodigo.facturacion.persistence.Usuario;
 import com.kodigo.facturacion.repository.interfaces.UserRepository;
 import com.kodigo.facturacion.service.interfaces.UserService;
@@ -15,10 +14,12 @@ public class UserImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
+
+
     @Override
-    public Usuario BuscarUsuarioById(Long id) {
+    public Usuario BuscarUsuarioByName(String name) {
         try {
-            Optional<Usuario> usuario = userRepository.findById(id);
+            Optional<Usuario> usuario = userRepository.findByNombre(name);
             if(!usuario.isPresent()){
                 throw new Exception();
             }
