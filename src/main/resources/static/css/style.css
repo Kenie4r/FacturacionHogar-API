@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat&family=Roboto:wght@700&display=swap');
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    font-family: 'League Spartan', sans-serif;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 5px;
+}
+
+
+h2{
+    color: white;
+}
+
+.hijo{
+    
+    align-items: center;
+}
