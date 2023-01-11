@@ -41,7 +41,7 @@ public class FacturaContoller {
         return new ResponseEntity<>(factura, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "eliminar/{idd}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "eliminar/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<String> eliminarFactura(@PathVariable Long id){
         String message = facturaImpl.eliminarFactura(id);
         if(message.equals("Can't delete")){
