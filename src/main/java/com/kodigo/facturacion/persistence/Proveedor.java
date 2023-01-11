@@ -7,7 +7,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Proveedor", schema = "app-kodigo")
+@Table(name = "proveedor")
 @NoArgsConstructor @AllArgsConstructor
 public class Proveedor {
 
