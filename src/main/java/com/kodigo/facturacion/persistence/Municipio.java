@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "municipio")
+@Table(name = "municipio", schema = "fhopenet_app-kodigo")
 public class Municipio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Data
 @Entity
-@Table(name = "casa")
+@Table(name = "casa", schema = "fhopenet_app-kodigo")
 @ToString
 public class Casa {
     @Id

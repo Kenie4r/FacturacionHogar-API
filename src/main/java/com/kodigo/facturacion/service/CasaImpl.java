@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class CasaImpl implements CasaService {
@@ -98,6 +100,11 @@ public class CasaImpl implements CasaService {
         casaOriginal.setMunicipio(municipio);
         casaRepository.save(casaOriginal);
         return cargarCasaPorId(id);
+    }
+
+    @Override
+    public List<Casa> listadoCasa() {
+        return casaRepository.findAll();
     }
 
 }

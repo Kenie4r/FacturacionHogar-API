@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "factura")
+@Table(name = "factura", schema = "fhopenet_app-kodigo")
 public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
