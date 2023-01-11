@@ -6,7 +6,7 @@ import lombok.*;
 
 @Entity
 @Data
-@Table(name = "País", schema = "app-kodigo")
+@Table(name = "país", schema = "fhopenet_app-kodigo")
 @NoArgsConstructor @AllArgsConstructor
 public class Pais {
     @Id
