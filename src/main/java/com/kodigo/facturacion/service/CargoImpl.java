@@ -1,15 +1,16 @@
-package com.kodigo.facturacion.service.interfaces;
+package com.kodigo.facturacion.service;
 
 import com.kodigo.facturacion.exception.ResourceNotFoundException;
 import com.kodigo.facturacion.persistence.Cargo;
 import com.kodigo.facturacion.persistence.Factura;
 import com.kodigo.facturacion.repository.interfaces.CargoRespository;
 import com.kodigo.facturacion.requestbody.CuerpoCargo;
+import com.kodigo.facturacion.service.interfaces.CargoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class CargoImpl implements CargoService{
+public class CargoImpl implements CargoService {
 
     CargoRespository cargoRespository;
 
