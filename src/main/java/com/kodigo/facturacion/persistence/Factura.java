@@ -17,6 +17,7 @@ public class Factura {
     @Column(name = "FechaExpidacion", nullable = false)
     private Date fechaExpidacion;
     @Column(name = "Total", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private double total;
     @ManyToOne
     @JoinColumn(name = "Servicio_CodigoServicio")
