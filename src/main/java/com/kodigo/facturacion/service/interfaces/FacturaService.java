@@ -10,7 +10,5 @@ public interface FacturaService {
     String actualizarFactura(Factura baseFactura, Long id);
     Factura obtenerFacturaPorCodigo(Long id);
     List<Factura> listadoDeFacturas();
-
-
-
+   List<Factura> listadoDeFacturasSerivicio(Long id);
 }

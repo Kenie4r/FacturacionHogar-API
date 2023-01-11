@@ -23,7 +23,7 @@ public class ProveedorController {
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    public ResponseEntity<Proveedor> getProveedor(@PathVariable("id") Long id) throws Exception {
+    public ResponseEntity<Proveedor> getProveedor(@PathVariable("id") Long id) {
         Proveedor proveedor1 = proveedor.obtenerProveedorPorID(id);
         if(proveedor1==null){
                throw new RuntimeException("Id de proveedor no existe");
@@ -44,7 +44,7 @@ public class ProveedorController {
     public ResponseEntity<String> deleteProveedor(@PathVariable Long id) throws Exception {
         return new ResponseEntity<String>(proveedor.eliminarProveedor(id), HttpStatus.OK);
     }
-    @RequestMapping(value = "{id}", method = RequestMethod.PATCH)
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public ResponseEntity<String> updateProveedor(@PathVariable("id") Long id , @RequestBody Proveedor proveedor1){
         proveedor1.setCodigoProveedor(id);
         String message = proveedor.actualizarProveedor(proveedor1);

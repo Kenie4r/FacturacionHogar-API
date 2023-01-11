@@ -80,4 +80,9 @@ public class FacturaImpl implements FacturaService {
     public List<Factura> listadoDeFacturas() {
         return repository.findAll();
     }
+
+    @Override
+    public List<Factura> listadoDeFacturasSerivicio(Long id) {
+        return  repository.getFacturaByServicio(id);
+    }
 }

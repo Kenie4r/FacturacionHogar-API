@@ -57,4 +57,12 @@ public class FacturaContoller {
         }
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+    @RequestMapping(value = "/servicio/{id}")
+    public ResponseEntity<List<Factura>> listarFacturasPorServicio(@PathVariable Long id){
+        List<Factura> listado = facturaImpl.listadoDeFacturasSerivicio(id);
+        if(listado.size()==0){
+            throw new RuntimeException("No existen facturas para el servicio seleccionado");
+        }
+        return new ResponseEntity<>(listado, HttpStatus.OK);
+    }
 }
