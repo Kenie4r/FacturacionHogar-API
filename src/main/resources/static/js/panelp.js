@@ -31,7 +31,7 @@ function crearFila(casa){
                 <td>${casa["numeroCasa"]}</td>
                 <td>$${casa["costoMantenimiento"]}</td>
                 <td>
-                    <button type="button" class="btn btn-secondary" onclick="obtenerInformacion(${casa})">Información</button>
+                    <button type="button" class="btn btn-secondary" onclick="obtenerInformacion(${casa["codigoCasa"]})">Información</button>
                 </td>
                 <td>
                     <button type="button" class="btn btn-primary" onclick="listarServicios(${casa["codigoCasa"]})">Servicios</button>
@@ -59,9 +59,44 @@ async function listarServicios(id){
     $("#service-block").show();
 
 }
-async function obtenerInformacion(casa){
+async function obtenerInformacion(id){
+    const request = await fetch("/api/casa/"+id, {
+        Method: "GET",
+        "Content-Type": "application/json",
+        Accept: "application/json"
+    })
+    let casa = await request.json();
+    console.log(casa)
+    $("#casa-body").empty()
+    let html = `<tr>
+                    <td>Codigo Casa</td>
+                    <td>${casa["codigoCasa"]}</td>
+                </tr>
+                <tr>
+                    <td>Número casa</td>
+                    <td>${casa["numeroCasa"]}</td>
+                </tr>
+                <tr>
+                    <td>Costo Mantenimiento</td>
+                    <td>$${casa["costoMantenimiento"]}</td>
+                </tr>
+                <tr>
+                    <td>Propietario</td>
+                    <td>${casa["propietario"]["nombrePersona"]}</td>
+                </tr>
+                 <tr>
+                    <td>Correo de propietario</td>
+                    <td>${casa["propietario"]["correo"]}</td>
+                </tr>
+                <tr>
+                    <td>Direccion</td>
+                    <td>${casa["pais"]["nombrePais"]}, ${casa["departamento"]["nombreDepartamento"]}, 
+                     ${casa["municipio"]["nombreMunicipio"]}</td>
+                </tr>`
+                ;
+    $("#casa-body").append(html)
+    $("#casa-block").show()
 
-    //informacion de casa
 }
 
 function crearFilaServicio(servicio){
@@ -130,3 +165,5 @@ async function sendMail(id){
 function closeDiv(id){
     $(id).hide();
 }
+
+
