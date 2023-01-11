@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/casa")
 public class CasaController {
@@ -17,6 +19,11 @@ public class CasaController {
     public CasaController(CasaService casaService) {
         super();
         this.casaService = casaService;
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<Casa>> listadoCasa(){
+        return new ResponseEntity<List<Casa>>(casaService.listadoCasa(), HttpStatus.OK);
     }
 
     @PostMapping()

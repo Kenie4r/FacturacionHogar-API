@@ -8,9 +8,10 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Table(name = "servicio")
+@Table(name = "servicio", schema = "fhopenet_app-kodigo")
 public class Servicio {
     @Id
+    @Column(name = "CodigoServicio")
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long codigoServicio;
 
@@ -21,11 +22,10 @@ public class Servicio {
     @Column(name = "FechaSuspencion", nullable = false)
     private Date fechaSuspencion;
     @ManyToOne
-    @JoinColumn(name = "Casa_CodigoCasa")
-    private Casa casa;
-    @ManyToOne
     @JoinColumn(name = "Proveedor_CodigoProveedor")
     private Proveedor proveedor;
-
+    @ManyToOne
+    @JoinColumn(name = "Casa_CodigoCasa")
+    private Casa casa;
 
 }

@@ -12,6 +12,8 @@ import com.kodigo.facturacion.service.interfaces.ServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ServicioImpl implements ServicioService {
 
@@ -81,5 +83,10 @@ public class ServicioImpl implements ServicioService {
                         new ResourceNotFoundException("Casa","Id",cuerpoServicio.getCodigoCasa()));
         servicioOriginal.setCasa(casa);
         return guardarServicio(servicioOriginal);
+    }
+
+    @Override
+    public List<Servicio> obtenerServiciosPorCasa(Long id) {
+        return servicioRepository.getServiciosByCasa(id);
     }
 }

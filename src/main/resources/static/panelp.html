@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>Panel Principal</title>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
 </head>
 <body>
 
@@ -26,16 +30,143 @@
             </div>
         </div>
     </nav>
-    
-    <br>
-    </br>
-    <br>
-    </br
-    <br>
-    </br>
+    <div class="container">
+        <h2 class="h2">
+            Listado de casas
+            <small class="text-muted">
+                /api/casas
+            </small>
+        </h2>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Bienvenido!</h4>
+            <p>Te has logueado de manera exitosa.</p>
+            <hr>
+            <p class="mb-0">Puedes usar esta página para ver las casas ingresadas</p>
+        </div>
+        <table id="table-casa" class="table table-striped table-sm">
+            <tr>
+                <th>Codigo Casa</th>
+                <th>Numero</th>
+                <th>Coste de mantenimiento</th>
+                <th>
+                    Mas Informacion
+                </th>
+                <th>Servicios</th>
+            </tr>
+        </table>
+    </div>
 
-    <h3>WELCOME</h1>
 
+    <div id="service-block" class="position-absolute h-100 w-100 top-0 start-0 " style="display: none;">
+        <div  class="container-fluid bg-black h-100 w-100 "  style="--bs-bg-opacity: .5; display: flex; flex-direction: colum; align-items: center;">
+            <div id="servicio" class="container bg-white p-3 align-middle">
+                <div style="display: flex; flex-direction: row; ">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="closeDiv('#service-block')"></button>
+                    <h3>
+                        Listado de servicios
+                        <small class="text-muted"> /api/servicios</small>
+                    </h3>
+                </div>
+                <table class="table table-striped table-sm" id="tableServicios">
+                    <tr>
+                        <th>Codigo Servicio</th>
+                        <th>
+                            Nombre Servicio
+                        </th>
+                        <th>
+                            Tarifa
+                        </th>
+                        <th>
+                            Fecha de suspencion
+                        </th>
+                        <th>
+                            Proveedor
+                        </th>
+                        <th>
+                            Opciones
+                        </th>
+                    </tr>
+                    <tbody id="services-body">
+
+                    </tbody>
+                </table>
+
+
+            </div>
+         
     
+        </div>
+    </div>
+
+    <div id="factura-block" class="position-absolute h-100 w-100 top-0 start-0 " style="display: none;">
+        <div  class="container-fluid bg-black h-100 w-100 "  style="--bs-bg-opacity: .5; display: flex; flex-direction: colum; align-items: center;">
+            <div id="factura" class="container bg-white p-3 align-middle">
+                <div>
+                    <button type="button" class="btn-close" aria-label="Close" onclick="closeDiv('#factura-block')"></button>
+                    <h3>
+                        Listado de factura
+                        <small class="text-muted"> /api/servicios</small>
+                    </h3>
+                </div>
+                <table id="table-factura" class="table table-striped table-sm">
+                    <thead>
+                        <th>
+                            Codigo Factura
+                        </th>
+                        <th>
+                            fecha de expidacion
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                        <th>
+                            Enviar correo
+                        </th>
+                    </thead>
+                    <tbody id="factura-body">
+
+                    </tbody>
+                </table>
+            </div>
+         
+    
+        </div>
+    </div>
+
+    <div id="casa-block" class="position-absolute h-100 w-100 top-0 start-0 " style="display: none;">
+        <div  class="container-fluid bg-black h-100 w-100 "  style="--bs-bg-opacity: .5; display: flex; flex-direction: colum; align-items: center;">
+            <div id="casa" class="container bg-white p-3 align-middle">
+                <div>
+                    <button type="button" class="btn-close" aria-label="Close" onclick="closeDiv('#casa-block')"></button>
+                    <h3>
+                        Listado de factura
+                        <small class="text-muted"> /api/servicios</small>
+                    </h3>
+                </div>
+                <table id="table-casa2" class="table table-striped table-sm">
+                    <thead>
+                        <th>
+                           Campo
+                        </th>
+                        <th>
+                            Datos
+                        </th>
+
+                    </thead>
+                    <tbody id="casa-body">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="js/panelp.js"></script>
+
 </body>
 </html>

@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Data
 @Entity
-@Table(name = "departamento", schema = "app-kodigo")
+@Table(name = "departamento", schema = "fhopenet_app-kodigo")
 public class Departamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

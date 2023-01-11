@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="habitante")
+@Table(name="habitante", schema = "fhopenet_app-kodigo")
 public class Habitante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

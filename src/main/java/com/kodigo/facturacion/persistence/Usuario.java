@@ -3,7 +3,7 @@ package com.kodigo.facturacion.persistence;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data @Entity @Table(name = "usuario")
+@Data @Entity @Table(name = "usuario", schema = "fhopenet_app-kodigo")
 public class Usuario {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUsuario;

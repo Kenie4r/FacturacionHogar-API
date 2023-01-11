@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data @Entity @Table(name = "cargo")
+@Data @Entity @Table(name = "cargo",schema="fhopenet_app-kodigo")
 public class Cargo {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long IdCargo;

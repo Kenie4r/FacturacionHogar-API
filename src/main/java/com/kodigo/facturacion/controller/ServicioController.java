@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/servicio")
 public class ServicioController {
@@ -43,5 +45,9 @@ public class ServicioController {
                                                        @RequestBody CuerpoServicio cuerpoServicio){
         return new ResponseEntity<Servicio>(servicioService.actualizarServicio(servicioId,cuerpoServicio)
         , HttpStatus.OK);
+    }
+    @GetMapping("/casa/{id}")
+    public ResponseEntity<List<Servicio>> listadodeServicioPorCasa(@PathVariable Long id){
+        return new ResponseEntity<List<Servicio>>(servicioService.obtenerServiciosPorCasa(id), HttpStatus.OK);
     }
 }
